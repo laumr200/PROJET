@@ -13,7 +13,7 @@ export const createRetard = async (req, res) => {
         const newRetard = await Retard.create({ date_retard, type_retard, justification, employe_id });
         res.status(201).json(newRetard);
     } catch (error) {
-        res.status(500).json({ error: 'Erro ao criar o atraso' });
+        res.status(500).json({ error: 'erreur a l`heure de creer un retard' });
     }
 };
 
@@ -23,7 +23,7 @@ export const getAllRetards = async (req, res) => {
         const retards = await Retard.findAll({ include: { model: Employe, as: 'employe' } });
         res.status(200).json(retards);
     } catch (error) {
-        res.status(500).json({ error: 'Erro ao obter os atrasos' });
+        res.status(500).json({ error: ' L´erreur pour obtenirle retard' });
     }
 };
 
@@ -31,9 +31,9 @@ export const getAllRetards = async (req, res) => {
 export const getRetardById = async (req, res) => {
     try {
         const retard = await Retard.findByPk(req.params.id, { include: { model: Employe, as: 'employe' } });
-        res.status(200).json(retard || { error: 'Atraso não encontrado' });
+        res.status(200).json(retard || { error: 'Retard pas trouvé' });
     } catch (error) {
-        res.status(500).json({ error: 'Erro ao obter o atraso' });
+        res.status(500).json({ error: 'l´erreur pour obtenir le retard' });
     }
 };
 
@@ -49,9 +49,9 @@ export const updateRetard = async (req, res) => {
             { date_retard, type_retard, justification },
             { where: { id: req.params.id } }
         );
-        res.status(200).json({ message: updated ? 'Atraso atualizado' : 'Atraso não encontrado' });
+        res.status(200).json({ message: updated ? 'retard à mis jour' : 'retard pas trouvé' });
     } catch (error) {
-        res.status(500).json({ error: 'Erro ao atualizar o atraso' });
+        res.status(500).json({ error: 'l´erreur à mis jour le retard' });
     }
 };
 
@@ -59,8 +59,8 @@ export const updateRetard = async (req, res) => {
 export const deleteRetard = async (req, res) => {
     try {
         const deleted = await Retard.destroy({ where: { id: req.params.id } });
-        res.status(deleted ? 204 : 404).json({ message: deleted ? '' : 'Atraso não encontrado' });
+        res.status(deleted ? 204 : 404).json({ message: deleted ? '' : 'le retard pas trouvé' });
     } catch (error) {
-        res.status(500).json({ error: 'Erro ao excluir o atraso' });
+        res.status(500).json({ error: 'erreur à suprrimer le retard' });
     }
 };
