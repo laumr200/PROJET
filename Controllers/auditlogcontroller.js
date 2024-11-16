@@ -1,5 +1,6 @@
 // controllers/auditlog.js
 import AuditLog from '../Models/Auditlog.js'; 
+import {validationResult} from "express-validator";
 
 export const createAuditLog = async (req, res) => {
   // Vérification des erreurs de validation

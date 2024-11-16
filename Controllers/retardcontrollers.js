@@ -1,6 +1,6 @@
 import Retard from '../Models/Retard.js';
 import Employe from '../Models/Employe.js';
-
+import {validationResult} from "express-validator";
 
 // Créer un retard
 export const createRetard = async (req, res) => {

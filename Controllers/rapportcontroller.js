@@ -1,5 +1,5 @@
 import Rapport from '../Models/Rapport.js';
-
+import {validationResult} from "express-validator";
 
 export const getRapports = async (req, res) => {
     try {
