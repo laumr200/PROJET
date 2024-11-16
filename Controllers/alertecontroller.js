@@ -3,6 +3,11 @@ import Employe from '../Models/Employe.js'; //Import du modèle Employé
 
 // 1. Créer une nouvelle alerte
 export const creerAlerte = async (req, res) => {
+   // Vérification des erreurs de validation
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
     try {
         const { message_alerte, date_creation, date_expiration, employe_id } = req.body;
         const nouvelleAlerte = await Alerte.create({
@@ -10,7 +15,7 @@ export const creerAlerte = async (req, res) => {
             date_creation,
             date_expiration,
             notification_envoyee: false,
-            employe_id
+            
         });
         res.status(201).json(nouvelleAlerte);
     } catch (error) {
@@ -32,6 +37,11 @@ export const obtenirAlertes = async (req, res) => {
 
 // 3. Mettre à jour une alerte
 export const mettreAJourAlerte = async (req, res) => {
+    // Vérification des erreurs de validation
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
     try {
         const { id } = req.params;
         const { message_alerte, date_expiration, notification_envoyee } = req.body;

@@ -1,6 +1,5 @@
 import database from '../Config/connection.js'; // Import de la connexion à la base de données
 import { DataTypes } from 'sequelize'; // Import des types de données Sequelize
-import Employe from './Employe.js'; // Import du modèle Employé pour les relations
 
 // Création du modèle Absence
 const Absence = database.define('Absence', {

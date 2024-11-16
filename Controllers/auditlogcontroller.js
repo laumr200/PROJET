@@ -2,6 +2,11 @@
 import AuditLog from '../Models/Auditlog.js'; 
 
 export const createAuditLog = async (req, res) => {
+  // Vérification des erreurs de validation
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
   try {
     const { action, userId, details } = req.body; 
 
