@@ -1,7 +1,7 @@
 
 import bcrypt from 'bcryptjs'
 import { Employe , Absence, Role } from '../Models/relations.js' 
- 
+import {validationResult} from "express-validator";
 
 
 

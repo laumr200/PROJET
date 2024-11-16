@@ -1,5 +1,6 @@
 import   Alerte from '../Models/Absence.js';// Import du modèle Absence
 import Employe from '../Models/Employe.js'; //Import du modèle Employé
+import {validationResult} from "express-validator";
 
 // 1. Créer une nouvelle alerte
 export const creerAlerte = async (req, res) => {

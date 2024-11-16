@@ -2,6 +2,7 @@ import Conge from '../Models/Conge.js';
 import Employe from '../Models/Employe.js';
 import { validationResult } from 'express-validator';
 
+
 export const createConge = async (req, res) => {
     // Vérification des erreurs de validation
     const errors = validationResult(req); // Vérifie les erreurs de validation

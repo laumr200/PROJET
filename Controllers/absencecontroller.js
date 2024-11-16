@@ -1,5 +1,6 @@
 
 import   Absence  from '../Models/Absence.js';// Import du modèle Absence
+import {validationResult} from "express-validator";
 
 
 // 1. Récupérer toutes les absences
