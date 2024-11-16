@@ -10,6 +10,10 @@ const Employe = database.define('Employe', {
         type: DataTypes.STRING,
         allowNull: false, // Le nom est obligatoire
     },
+    prenom: {
+        type: DataTypes.STRING,
+        allowNull: false, // Le nom est obligatoire
+    },
     email: {
         type: DataTypes.STRING,
         allowNull: false, // L'email est obligatoire

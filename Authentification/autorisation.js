@@ -1,10 +1,9 @@
-//Importer le modele Etudiant
-import { EmptyResultError } from 'sequelize'
+//Importer le modele employe
 import { Employe } from '../Models/relations.js'
 
 const autoriser = roles => async (req, res, next) => {
     //roles peut etre plusieurs
-    //roles=['admin','etudiant']
+    //roles=['admin','programmer']
 
     //Recuperer l'id a partir de la req
     const id = req.employeId

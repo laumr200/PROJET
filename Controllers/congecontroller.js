@@ -2,6 +2,12 @@ import Conge from '../Models/Conge.js';
 import Employe from '../Models/Employe.js';
 
 export const createConge = async (req, res) => {
+   // Vérification des erreurs de validation
+   const errors = validationResult(req);  // Vérifier les erreurs
+   if (!errors.isEmpty()) {
+       return res.status(400).json({ errors: errors.array() });  // Si des erreurs existent, retourner un message d'erreur
+   }
+
     try {
         const { date_conge, type_conge, justification, employe_id } = req.body;
         const newConge = await Conge.create({ date_conge, type_conge, justification, employe_id });
@@ -10,6 +16,7 @@ export const createConge = async (req, res) => {
         res.status(500).json({ error: 'Erro ao criar a ausência' });
     }
 };
+
 
 export const getAllConges = async (req, res) => {
     try {
@@ -30,6 +37,11 @@ export const getCongeById = async (req, res) => {
 };
 
 export const updateConge = async (req, res) => {
+     // Vérification des erreurs de validation
+     const errors = validationResult(req);  // Vérifier les erreurs
+     if (!errors.isEmpty()) {
+         return res.status(400).json({ errors: errors.array() });  // Si des erreurs existent, retourner un message d'erreur
+     }
     try {
         const { date_conge, type_conge, justification } = req.body;
         const [updated] = await Conge.update(

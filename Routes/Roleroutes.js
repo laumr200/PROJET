@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { getAllRoles, addRole, updateRole, delRole } from '../Controllers/rolecontroller.js';
 
+
 const route = Router();
 route.get('/', getAllRoles);
 route.post('/', addRole);

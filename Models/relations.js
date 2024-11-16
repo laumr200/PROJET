@@ -4,6 +4,7 @@ import Employe from "./Employe.js";
 import Absence from "./Absence.js";
 import Conge from "./Conge.js";
 import Retard from "./Retard.js";
+import Alerte from "./Alerte.js";
 
 // Création des relations
 
@@ -56,6 +57,16 @@ Retard.belongsTo(Employe, {
     onUpdate: 'RESTRICT',
 });
 
+// Relation un-à-plusieurs entre Employe et Alerte
+Employe.hasMany(Alerte, {
+    foreignKey: 'employe_id',
+    onDelete: 'CASCADE',
+    onUpdate: 'RESTRICT',
+});
+Alerte.belongsTo(Employe, {
+    foreignKey: 'employe_id',
+    onUpdate: 'RESTRICT',
+});
 
 // Exporter les modèles pour les utiliser dans d'autres parties du projet
-export { Role, Employe, Absence , Conge, Retard };
+export { Role, Employe, Absence , Conge, Retard , Alerte };

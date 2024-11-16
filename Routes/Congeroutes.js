@@ -1,6 +1,7 @@
 import {Router} from 'express';
 import { createConge, getAllConges, getCongeById, updateConge, deleteConge } from '../Controllers/congecontroller.js';
 
+
 const route = Router();
 
 // Rota para criar uma nova ausência
