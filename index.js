@@ -15,12 +15,12 @@ import database from './Config/connection.js';  // Importer la connexion à la b
 import employeRoutes from './Routes/Employeroutes.js';
 import roleRoutes from './Routes/Roleroutes.js';
 import absenceRoutes from './Routes/Absenceroutes.js';
-import reportRoutes from "./Routes/Rapportroutes.js";
+import rapportRoutes from "./Routes/Rapportroutes.js";
 import auditLogRoutes from './Routes/Auditlogroutes.js'; // Import the audit log route
 import alerteRoutes from './Routes/Alerteroutes.js';
 import congeRoutes from './Routes/Congeroutes.js';
 import retardRoutes from './Routes/Retardroutes.js';
-
+import authentificationroute from './Routes/authentificationroutes.js'
 
 //Creation du serveur
 const app = express();
@@ -36,12 +36,12 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use('/api/employes', employeRoutes);    // Routes pour les employés
 app.use('/api/roles', roleRoutes);          // Routes pour les rôles
 app.use('/api/absences', absenceRoutes);    // Routes pour les absences
-app.use('/api/report', reportRoutes); // Reports route
+app.use('/api/rapport', rapportRoutes); // Reports route
 app.use('/api/auditlog', auditLogRoutes); // Audit log route
 app.use('/api/alertes', alerteRoutes);     //Routes pour les alertes
 app.use('/api/conges', congeRoutes);        // Routes pour les congés
 app.use('/api/retards', retardRoutes);      // Routes pour les retards
-
+app.use('/api/login', authentificationroute);
 // Charger les variables d'environnement
 dotenv.config();
 
