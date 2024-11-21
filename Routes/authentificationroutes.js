@@ -6,6 +6,6 @@ import loginRules from "../Validations/loginValidation.js";
 
 const authRoute = Router()
 
-authRoute.post('/',  login)
+authRoute.post('/', loginRules , login)
 
 export default authRoute

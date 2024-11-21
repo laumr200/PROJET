@@ -1,6 +1,6 @@
 import {Router} from 'express';
 import { createRetard, getAllRetards, getRetardById, updateRetard, deleteRetard } from '../Controllers/retardcontrollers.js';
-
+import retardValidationRules from '../Validations/retardValidation.js'
 
 const route = Router();
 

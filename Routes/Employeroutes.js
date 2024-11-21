@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { getAllEmployes, addEmployes, updateEmploye, delEmploye ,getEmployeAbsences, addRoleToEmploye,getEmployeRoles } from '../Controllers/employecontroller.js';
-
+import employeValidationRules from '../Validations/employeValidation.js'
 
 //Importer la fonction pour charger les images/fichiers
 import upload from "../helpers/fileLoader.js";

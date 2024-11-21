@@ -1,6 +1,7 @@
 import Rapport from '../Models/Rapport.js';
 import {validationResult} from "express-validator";
 
+//obtenir toutes les rapports 
 export const getRapports = async (req, res) => {
     try {
         const rapports = await Rapport.findAll();
