@@ -4,8 +4,8 @@ import { getAllRoles, addRole, updateRole, delRole } from '../Controllers/roleco
 
 const route = Router();
 route.get('/', getAllRoles);
-route.post('/', addRole);
-route.put('/:id', updateRole);
+route.post('/',  roleValidationRules, addRole);
+route.put('/:id', roleValidationRules, updateRole);
 route.delete('/:id', delRole);
 
 export default route;

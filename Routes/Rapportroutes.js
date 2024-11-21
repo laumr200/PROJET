@@ -4,6 +4,7 @@ import { getRapports , createRapport } from '../Controllers/rapportcontroller.js
 const route= express.Router();
 
 route.get('/rapports', getRapports);
-route.post('/', createRapport);
+route.post('/',rapportValidationRules
+,    createRapport);
 
 export default route;

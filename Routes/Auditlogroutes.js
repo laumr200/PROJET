@@ -5,6 +5,6 @@ import { createAuditLog } from '../Controllers/auditlogController.js';
 
 const route = express.Router();
 
-route.post('/auditlog', createAuditLog);
+route.post('/auditlog',auditLogValidationRules, createAuditLog);
 
 export default route

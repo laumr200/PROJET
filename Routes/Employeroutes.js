@@ -12,11 +12,11 @@ route.post('/', upload.single('photo'), addEmployes)
 route.all("*",verifierToken)
 //route.all("*",autoriser(["admin"])) 
 route.get('/', getAllEmployes);
-route.post('/',  addEmployes);
-route.put('/:id', updateEmploye);
+route.post('/', employeValidationRules, addEmployes);
+route.put('/:id', employeValidationRules ,updateEmploye);
 route.delete('/:id', delEmploye);
 route.get('/:id/absences', getEmployeAbsences);
-route.post('/:id/roles/:roleId', addRoleToEmploye);
+route.post('/:id/roles/:roleId', employeValidationRules, addRoleToEmploye);
 route.get('/:id/roles', getEmployeRoles);
 
 export default route;
