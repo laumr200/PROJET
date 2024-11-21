@@ -469,10 +469,22 @@
 				},
 				{
 					"name": "envoyerNotification",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:5000//api/alertes/1/notification"
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": \"Notification envoyée\",\r\n    \"alerte\": {\r\n        \"id\": 2,\r\n    \"message_alerte\": \"Ceci est un message d'alerte\",\r\n    \"date_creation\": \"2024-04-04\",\r\n    \"date_expiration\": \"2024-04-05\",\r\n    \"notification_envoyee\": true\r\n   \r\n               }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000//api/alertes/2/notification"
 					},
 					"response": []
 				}
@@ -549,7 +561,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"date_retard\": \"2024-12-25\",\r\n  \"type_retard\": \"trafique \",\r\n  \"justification\": \"trafique\",\r\n  \"employe_id\": 10\r\n}\r\n",
+							"raw": "{\r\n  \r\n    \"date_retard\": \"2024-11-21\",\r\n    \"motif\": \"Embouteillage sur le trajet\",\r\n    \"heure_retard\": \"09:30\",\r\n      \"employe_id\": 1\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -563,6 +575,12 @@
 				{
 					"name": "getAllRetards",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
 						"method": "GET",
 						"header": [],
 						"url": "http://localhost:5000/api/retards"
@@ -572,6 +590,12 @@
 				{
 					"name": "getRetardById",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
 						"method": "GET",
 						"header": [],
 						"url": "http://localhost:5000/api/retards/2"
@@ -585,14 +609,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"date_retard\": \"2024-11-15\",\r\n  \"type_retard\": \"Rendrez-vous avec le medecin\",\r\n  \"justification\": \"Raison personnelle importante\",\r\n  \"employe_id\": 3\r\n}\r\n",
+							"raw": "{\r\n  \"date_retard\": \"2024-11-21\",\r\n    \"motif\": \" trajet\",\r\n    \"heure_retard\": \"09:30\",\r\n      \"employe_id\": 1\r\n      }\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "http://localhost:5000/api/retards/2"
+						"url": "http://localhost:5000/api/retards/5"
 					},
 					"response": []
 				},
@@ -601,7 +625,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "http://localhost:5000/api/retards/2"
+						"url": "http://localhost:5000/api/retards/4"
 					},
 					"response": []
 				}
