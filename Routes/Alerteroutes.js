@@ -12,7 +12,7 @@ import {
 
 const route =Router();
 
-route.post('/alertes',  creerAlerte);
+route.post('/alertes', alerteRules,  creerAlerte);
 route.get('/alertes', obtenirAlertes);
 route.put('/alertes/:id', alerteRules, mettreAJourAlerte);
 route.delete('/alertes/:id', supprimerAlerte);
