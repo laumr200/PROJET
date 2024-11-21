@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { getAllRoles, addRole, updateRole, delRole } from '../Controllers/rolecontroller.js';
-
+import roleValidationRules from '../Validations/roleValidation.js'
 
 const route = Router();
 route.get('/', getAllRoles);

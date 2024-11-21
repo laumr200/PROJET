@@ -1,6 +1,6 @@
 import {Router} from 'express';
 import { createConge, getAllConges, getCongeById, updateConge, deleteConge } from '../Controllers/congecontroller.js';
-
+import congeValidationRules from '../Validations/congeValidation.js'
 
 const route = Router();
 

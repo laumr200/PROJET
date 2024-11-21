@@ -1,6 +1,6 @@
 import { Router } from 'express'; // Import du routeur Express
 import { getAllAbsences, addAbsence, updateAbsence, delAbsence } from '../Controllers/absencecontroller.js'; // Import des contrôleurs
-
+import absenceRules from '../Validations/absenceValidation.js'
 const route = Router();
 
 // Définition des routes pour les absences

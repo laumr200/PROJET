@@ -6,16 +6,16 @@ import {
     supprimerAlerte,
     envoyerNotification
 } from '../Controllers/alertecontroller.js';
-
+import alerteRules from '../Validations/alerteValidation.js';
 
 
 
 const route =Router();
 
-route.post('/alertes', alerteRules,  creerAlerte);
-route.get('/alertes', obtenirAlertes);
-route.put('/alertes/:id', alerteRules, mettreAJourAlerte);
-route.delete('/alertes/:id', supprimerAlerte);
-route.post('/alertes/:id/notification',alerteRules, envoyerNotification);
+route.post('/', alerteRules,  creerAlerte);
+route.get('/', obtenirAlertes);
+route.put('/:id', alerteRules, mettreAJourAlerte);
+route.delete('/:id', supprimerAlerte);
+route.post('/:id/notification',alerteRules, envoyerNotification);
 
 export default route;
