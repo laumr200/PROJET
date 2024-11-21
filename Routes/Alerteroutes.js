@@ -14,8 +14,8 @@ const route =Router();
 
 route.post('/alertes',  creerAlerte);
 route.get('/alertes', obtenirAlertes);
-route.put('/alertes/:id', mettreAJourAlerte);
+route.put('/alertes/:id', alerteRules, mettreAJourAlerte);
 route.delete('/alertes/:id', supprimerAlerte);
-route.post('/alertes/:id/notification', envoyerNotification);
+route.post('/alertes/:id/notification',alerteRules, envoyerNotification);
 
 export default route;
