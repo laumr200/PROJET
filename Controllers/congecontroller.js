@@ -1,5 +1,5 @@
-import Conge from '../Models/Conge.js';
-import Employe from '../Models/Employe.js';
+import {Conge} from '../Models/relations.js';
+import {Employe} from '../Models/relations.js';
 import { validationResult } from 'express-validator';
 
 

@@ -1,5 +1,5 @@
-import Retard from '../Models/Retard.js';
-import Employe from '../Models/Employe.js';
+import {Retard} from '../Models/relations.js';
+import {Employe} from '../Models/relations.js';
 import {validationResult} from "express-validator";
 
 // Créer un retard

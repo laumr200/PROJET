@@ -34,26 +34,26 @@ Absence.belongsTo(Employe, {
 // Relation un-à-plusieurs entre Employe et Conge
 Employe.hasMany(Conge, {
     foreignKey: 'employe_id',
-    as: 'conges',
+    // as: 'conges',
     onDelete: 'CASCADE',
     onUpdate: 'RESTRICT',
 });
 Conge.belongsTo(Employe, {
     foreignKey: 'employe_id',
-    as: 'employe',
+    // as: 'employe',
     onUpdate: 'RESTRICT',
 });
 
 // Relation un-à-plusieurs entre Employe et Retard
 Employe.hasMany(Retard, {
     foreignKey: 'employe_id',
-    as: 'retards',
+    // as: 'retards',
     onDelete: 'CASCADE',
     onUpdate: 'RESTRICT',
 });
 Retard.belongsTo(Employe, {
     foreignKey: 'employe_id',
-    as: 'employe',
+    // as: 'employe',
     onUpdate: 'RESTRICT',
 });
 
