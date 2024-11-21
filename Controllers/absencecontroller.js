@@ -1,5 +1,5 @@
 
-import   Absence  from '../Models/Absence.js';// Import du modèle Absence
+import   {Absence}  from '../Models/relations.js';// Import du modèle Absence
 import {validationResult} from "express-validator";
 
 

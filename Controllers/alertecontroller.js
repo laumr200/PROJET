@@ -1,5 +1,5 @@
-import   Alerte from '../Models/Absence.js';// Import du modèle Absence
-import Employe from '../Models/Employe.js'; //Import du modèle Employé
+import   {Alerte} from '../Models/relations.js';// Import du modèle Absence
+import {Employe} from '../Models/relations.js'; //Import du modèle Employé
 import {validationResult} from "express-validator";
 
 // 1. Créer une nouvelle alerte
@@ -28,7 +28,7 @@ export const creerAlerte = async (req, res) => {
 export const obtenirAlertes = async (req, res) => {
     try {
         const alertes = await Alerte.findAll({
-            include: [{ model: Employe, as: 'employe' }]
+            include: [{ model: Employe, }]
         });
         res.status(200).json(alertes);
     } catch (error) {
