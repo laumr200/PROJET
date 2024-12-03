@@ -1,0 +1,640 @@
+{
+	"info": {
+		"_postman_id": "36266735-3a81-4f15-94b1-73ad6d40b4a8",
+		"name": "Projet Web-test postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38152999"
+	},
+	"item": [
+		{
+			"name": "Employe",
+			"item": [
+				{
+					"name": "obtenir tous les employes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/employes/"
+					},
+					"response": []
+				},
+				{
+					"name": "ajouter un employe",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n[\r\n{\r\n      \"nom\": \"Clara Lemoine\",\r\n      \"prenom\":\"martin\",\r\n        \"email\": \"clara.lemoine@example1.com\",\r\n        \"telephone\": \"555-9876\",\r\n        \"adresse\": \"789 Boulevard de Marseille\",\r\n        \"mot_de_passe\": \"password3\",\r\n        \"date_d_embauche\": \"2023-05-20\"\r\n},\r\n{\r\n      \"nom\": \"Martin\",\r\n      \"prenom\":\"Moye\",\r\n        \"email\": \"marti.moyen@example2.com\",\r\n        \"telephone\": \"555-9876\",\r\n        \"adresse\": \"114 Boulevard de Marseille\",\r\n        \"mot_de_passe\": \"password4A\",\r\n        \"date_d_embauche\": \"2023-05-20\"\r\n},\r\n{\r\n      \"nom\": \"Justinn\",\r\n      \"prenom\":\"ramirez\",\r\n        \"email\": \"justin.ramirez@example2.com\",\r\n        \"telephone\": \"955-9876\",\r\n        \"adresse\": \"134 Boulevard de Marseille\",\r\n        \"mot_de_passe\": \"password4A\",\r\n        \"date_d_embauche\": \"2023-05-20\"\r\n},\r\n{\r\n      \"nom\": \"Adriano\",\r\n      \"prenom\":\"Indo\",\r\n        \"email\": \"adrinoindo@example2.com\",\r\n        \"telephone\": \"555-9886\",\r\n        \"adresse\": \"114 rue de Boisbrian\",\r\n        \"mot_de_passe\": \"password4A\",\r\n        \"date_d_embauche\": \"2023-05-20\"\r\n}\r\n]\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/employes/"
+					},
+					"response": []
+				},
+				{
+					"name": "mettre a jour un employe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n            \"id\": 1,\r\n            \"nom\": \"Si\",\r\n            \"prenom\": \"ma\",\r\n            \"email\": \"jakesmith@example.com\",\r\n            \"telephone\": \"987654321\",\r\n            \"adresse\": \"456 avenue exemple\",\r\n            \"mot_de_passe\": \"$2a$10$Rh3DYYuaH0/ecUzrcMl2aOidNPnirTNRCEGVajteE3UV.EEFxUJOi\",\r\n            \"date_d_embauche\": \"2023-11-14\",\r\n            \"createdAt\": \"2024-11-15T22:21:42.000Z\",\r\n            \"updatedAt\": \"2024-11-15T22:21:42.000Z\"\r\n        }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/employes/1"
+					},
+					"response": []
+				},
+				{
+					"name": "supprimer un employe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:5000/api/employes/1"
+					},
+					"response": []
+				},
+				{
+					"name": "absences de l'employe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/employes/1/absences"
+					},
+					"response": []
+				},
+				{
+					"name": "ajout du role au employeux",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:5000/api/employes/2/roles/1"
+					},
+					"response": []
+				},
+				{
+					"name": "obtenir les role de l'employe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/employes/4/roles"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "obtenir toutes les roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/roles/"
+					},
+					"response": []
+				},
+				{
+					"name": "ajouter des roles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n        \"nom_role\": \"Programmer\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/roles/"
+					},
+					"response": []
+				},
+				{
+					"name": "mettre a jour les roles",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n   \r\n        \"nom_role\": \"Professeur\"\r\n    \r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/roles/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"roles",
+								"2"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "supprimer un role",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:5000/api/roles/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Absence",
+			"item": [
+				{
+					"name": "Obtenir toutes les absences",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/absences/"
+					},
+					"response": []
+				},
+				{
+					"name": "ajout des absences",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n    {\r\n    \"absences\": [\r\n        {\r\n            \"date_absence\": \"2024-11-15\",\r\n            \"type_absence\": \"maladie\",\r\n            \"justification\": \"Headache\",\r\n            \"employe_id\": 10\r\n        },\r\n        {\r\n            \"date_absence\": \"2024-11-16\",\r\n            \"type_absence\": \"congé\",\r\n            \"justification\": null,\r\n            \"employe_id\": 9\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/absences"
+					},
+					"response": []
+				},
+				{
+					"name": "mettre a jour",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"date_absence\": \"2024-11-01\",\r\n    \"type_absence\": \"vacances\",\r\n    \"justification\": \"Holiday\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/absences/4"
+					},
+					"response": []
+				},
+				{
+					"name": "supprimer une absence",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/absences/6"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n  {\r\n\"email\": \"Lemoine@example1.com\",   \r\n\"mot_de_passe\": \"password3A*\"     \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Conge",
+			"item": [
+				{
+					"name": "creerConge",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"date_conge\": \"2024-11-15\",\r\n  \"type_conge\": \"autre\",\r\n  \"justification\": \"JE DU ALLER A l'ecole de ma fille \",\r\n  \"employe_id\": 1\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/conges/"
+					},
+					"response": []
+				},
+				{
+					"name": "getallConges",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/conges"
+					},
+					"response": []
+				},
+				{
+					"name": "getCongeById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/conges/2"
+					},
+					"response": []
+				},
+				{
+					"name": "updateConge",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n     \"date_conge\": \"2024-05-20\",\r\n        \"type_conge\": \"maladie\",\r\n        \"justification\": \"fatigue\",\r\n        \"employe_id\": 1\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/conges/1"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteConge",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/conges/3"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Alerte",
+			"item": [
+				{
+					"name": "creerAlerte",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message_alerte\": \"Ceci est un message d'alerte\",\r\n    \"date_creation\": \"2024-04-04T12:34:56Z\",\r\n    \"date_expiration\": \"2024-04-05T12:34:56Z\",\r\n    \"notification_envoyee\": false,\r\n    \"employe_id\" : 10\r\n}\r\n\r\n    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/alertes"
+					},
+					"response": []
+				},
+				{
+					"name": "obtenirAlertes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/alertes"
+					},
+					"response": []
+				},
+				{
+					"name": "mettreAJourAlerte",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message_alerte\": \"employe avec absences non justifies\",\r\n    \"date_creation\": \"2024-04-04\",\r\n    \"date_expiration\": \"2024-04-05\",\r\n    \"notification_envoyee\": false,\r\n    \"updatedAt\": \"2024-11-21T17:36:51.928Z\",\r\n    \"createdAt\": \"2024-11-21T17:36:51.928Z\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000//api/alertes/2"
+					},
+					"response": []
+				},
+				{
+					"name": "envoyerNotification",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000//api/alertes/1/notification"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AuditLog",
+			"item": [
+				{
+					"name": "createAuditLog",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"action\": \"Création de rapport\",\r\n  \"employe_id\": 1,\r\n  \"details\": \"Un rapport d'assiduité a été créé pour novembre 2024.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/auditlog/auditlog"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rapport",
+			"item": [
+				{
+					"name": "getRapports",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/rapport"
+					},
+					"response": []
+				},
+				{
+					"name": "createRapport",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Rapport anual\",\r\n  \"content\": \"Ce rapport couvre les performances de les 12 dernier mois, y compris les statistiques des employés.\"\r\n}\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/rapport"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Retard",
+			"item": [
+				{
+					"name": "createRetard",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"date_retard\": \"2024-12-25\",\r\n  \"type_retard\": \"trafique \",\r\n  \"justification\": \"trafique\",\r\n  \"employe_id\": 10\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/retards"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllRetards",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/retards"
+					},
+					"response": []
+				},
+				{
+					"name": "getRetardById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/retards/2"
+					},
+					"response": []
+				},
+				{
+					"name": "updateRetard",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"date_retard\": \"2024-11-15\",\r\n  \"type_retard\": \"Rendrez-vous avec le medecin\",\r\n  \"justification\": \"Raison personnelle importante\",\r\n  \"employe_id\": 3\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/retards/2"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteRetard",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:5000/api/retards/2"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTczMjE5ODU5MH0.Ssiipo1xEdxNzqe12Rb7uDtx0B5Lziis31B7e69LLE8",
+			"type": "string"
+		}
+	]
+}
